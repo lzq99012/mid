@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- meta viewport tag needed to make site responsive on mobile devices https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>mid</title>
+
+        <link rel="stylesheet" href="./css/style.css">
+        <style>
+            body{
+                background-color:rgb(60,60,70);
+                /* 防止元素超出时出现滚动条 */
+                overflow: hidden;
+            }
+            .a1{
+                width: 50%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                justify-content:center;
+                align-items: center;
+                top: 400px;
+                perspective: 200px;
+            }
+            .b1{
+                width: 1100px;
+                height: 500px;
+                position: absolute;
+                border-radius: 50px;
+                border: 35px #fff solid;
+                /* 同时设置外阴影和内阴影，inset就是将外阴影转为内阴影 */
+                box-shadow:0 0 80px rgb(150,20,100),
+                inset 0 0 80px rgb(150,20,100);
+                /* 因为有20个span元素，所以每个元素平均分配到20分之一的时间，
+                若持续时间为10s的话，元素的延迟就是0.5的倍数，以此类推
+                持续时间越短，速度越快 */
+                animation:a 10s ease-in-out infinite both;
+                animation-delay: calc(var(--i)*.5s);
+            }
+            @keyframes a{
+                0%{
+                    opacity: 0;
+                    transform:translateZ(-700px) scale(.2);
+                }
+                100%{
+                    /* 当元素离你越近的时候，透明度就越高 */
+                    opacity: 1;
+                    /* transformZ越大时，元素就离你越近，
+                    scale是缩放，在元素离你越来越近的同时也越来越大 */
+                    transform:translateZ(200px) scale(1);
+                }
+            }
+        </style>
+        <style>
+            body{
+                background-color: rgb(204, 212, 230);
+                display: flex;
+                justify-content: center;
+            }
+            .a{
+                position: relative;
+                width: 700px;
+                height: 420px;
+                border: #fff 10px solid;
+                background-color: rgba(185, 196, 227, 0.9);
+                top: 200px;
+                border-radius: 40px;
+                overflow: hidden;
+            }
+            .b{
+                position: absolute;
+                width: 210px;
+                height: 300px;
+                left: 0;
+                margin: 55px 50px;
+                transition: 1s;
+            }
+            .b a{
+                text-decoration: none;
+                color: #fff;
+                font: 900 32px '';
+            }
+            .b h2{
+                /* 鼠标放开时的动画，第一个值是动画的过渡时间
+                第二个值是延迟一秒后执行动画 */
+                transition: .5s 1s;
+                opacity: 0;
+                color: rgb(255, 63, 63);
+            }
+            .b span{
+                transition: .5s 1s;
+                color: #fff;
+                font: 500 15px '';
+                position: absolute;
+                top: 100px;
+            }
+            .c{
+                position: absolute;
+                top: -130px;
+                right: -240px;
+            }
+            .d,.e{
+                position: absolute;
+                right: calc(var(--i)*100px);
+                width: calc(var(--w)*40px);
+                height: 500px;
+                overflow: hidden;
+                border-radius: 100px;
+                transform: rotateZ(220deg) translate(0,0);
+                background: rgb(167, 252, 253);
+                transition: .5s .5s;
+            }
+            .d:nth-child(2){
+                background: rgb(147, 64, 255);
+            }
+            .e{
+                left: -470px;
+                top: -140px;
+                width: 70px;
+                background-color: rgb(253, 254, 153);
+            }
+            .a:hover .c div{
+                /* 设置延迟动画 */
+                transition: .5s calc(var(--i)*.1s);
+                /* 移动的轨迹 */
+                transform: rotateZ(220deg) translate(-200px,400px);
+            }
+            .a:hover .b{
+                transition: 1s .5s;
+                left: 370px;
+            }
+            .a:hover .b span{
+                transition: 1s .5s;
+                top: 150px;
+            }
+            .a:hover .b h2{
+                transition: 1s .5s;
+                opacity: 1;
+            }
+            .f{
+            width: 330px;
+            height: 330px;
+            position: absolute;
+            background-image: url('.//assets/images/goat.png');
+            background-size: cover;
+            margin: 43px;
+            opacity: 0;
+            transition: .2s;
+        }
+        .a:hover .f{
+            transition: 1s 1s;
+            opacity: 1;
+        }
+        </style>
+        
+    </head>
+    
+    <body>
+       
+        <div class="a1">
+            <div class="b1" style="--i:1"></div>
+            <div class="b1" style="--i:2"></div>
+            <div class="b1" style="--i:3"></div>
+            <div class="b1" style="--i:4"></div>
+            <div class="b1" style="--i:5"></div>
+            <div class="b1" style="--i:6"></div>
+            <div class="b1" style="--i:7"></div>
+            <div class="b1" style="--i:8"></div>
+            <div class="b1" style="--i:9"></div>
+            <div class="b1" style="--i:10"></div>
+            <div class="b1" style="--i:11"></div>
+            <div class="b1" style="--i:12"></div>
+            <div class="b1" style="--i:13"></div>
+            <div class="b1" style="--i:14"></div>
+            <div class="b1" style="--i:15"></div>
+            <div class="b1" style="--i:16"></div>
+            <div class="b1" style="--i:17"></div>
+            <div class="b1" style="--i:18"></div>
+            <div class="b1" style="--i:19"></div>
+            <div class="b1" style="--i:20"></div>
+        </div>
+         <!-- 名片分三大块
+        最外层的一块a
+        文字一大块b
+        平面圆柱一块c -->
+        <div class="a">
+            <div class="b">
+                <a href="#">KEY ViSUAL</a>
+                <h2>You can choose one</h2>
+                <span><br/><a href="#">Basic Information</a><br/><b href="#">Appearance Setting</b><b href="#">Personality Setting</b><b href="#">Display Mode</b></span>
+            </div>
+            <div class="c">
+                <!-- --i是用来计算平面圆柱的动效延迟和距离的
+                --w则是用来计算平面圆柱的宽度 -->
+                <div class="d" style="--i:1;--w:1.5"></div>
+                <div class="d" style="--i:2;--w:1.6"></div>
+                <div class="d" style="--i:3;--w:1.4"></div>
+                <div class="d" style="--i:4;--w:1.7"></div>
+                <div class="e" style="--i:1"></div>
+            </div>
+            <!-- 设置二维码 -->
+            <div class="f"></div>
+        </div>
+    </body>
+    
+    </html>
