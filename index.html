@@ -12,7 +12,7 @@
         <style>
             body{
                 background-color:rgb(60,60,70);
-                /* 防止元素超出时出现滚动条 */
+               
                 overflow: hidden;
             }
             .a1{
@@ -31,12 +31,10 @@
                 position: absolute;
                 border-radius: 50px;
                 border: 35px #fff solid;
-                /* 同时设置外阴影和内阴影，inset就是将外阴影转为内阴影 */
+               
                 box-shadow:0 0 80px rgb(150,20,100),
                 inset 0 0 80px rgb(150,20,100);
-                /* 因为有20个span元素，所以每个元素平均分配到20分之一的时间，
-                若持续时间为10s的话，元素的延迟就是0.5的倍数，以此类推
-                持续时间越短，速度越快 */
+                
                 animation:a 10s ease-in-out infinite both;
                 animation-delay: calc(var(--i)*.5s);
             }
@@ -46,10 +44,9 @@
                     transform:translateZ(-700px) scale(.2);
                 }
                 100%{
-                    /* 当元素离你越近的时候，透明度就越高 */
+                    
                     opacity: 1;
-                    /* transformZ越大时，元素就离你越近，
-                    scale是缩放，在元素离你越来越近的同时也越来越大 */
+                    
                     transform:translateZ(200px) scale(1);
                 }
             }
@@ -84,8 +81,7 @@
                 font: 900 32px '';
             }
             .b h2{
-                /* 鼠标放开时的动画，第一个值是动画的过渡时间
-                第二个值是延迟一秒后执行动画 */
+                
                 transition: .5s 1s;
                 opacity: 0;
                 color: rgb(255, 63, 63);
@@ -123,9 +119,9 @@
                 background-color: rgb(253, 254, 153);
             }
             .a:hover .c div{
-                /* 设置延迟动画 */
+                
                 transition: .5s calc(var(--i)*.1s);
-                /* 移动的轨迹 */
+                
                 transform: rotateZ(220deg) translate(-200px,400px);
             }
             .a:hover .b{
@@ -182,10 +178,7 @@
             <div class="b1" style="--i:19"></div>
             <div class="b1" style="--i:20"></div>
         </div>
-         <!-- 名片分三大块
-        最外层的一块a
-        文字一大块b
-        平面圆柱一块c -->
+       
         <div class="a">
             <div class="b">
                 <a href="#">KEY ViSUAL</a>
@@ -193,15 +186,14 @@
                 <span><br/><a href="#">Basic Information</a><br/><b href="#">Appearance Setting</b><b href="#">Personality Setting</b><b href="#">Display Mode</b></span>
             </div>
             <div class="c">
-                <!-- --i是用来计算平面圆柱的动效延迟和距离的
-                --w则是用来计算平面圆柱的宽度 -->
+                
                 <div class="d" style="--i:1;--w:1.5"></div>
                 <div class="d" style="--i:2;--w:1.6"></div>
                 <div class="d" style="--i:3;--w:1.4"></div>
                 <div class="d" style="--i:4;--w:1.7"></div>
                 <div class="e" style="--i:1"></div>
             </div>
-            <!-- 设置二维码 -->
+            
             <div class="f"></div>
         </div>
     </body>
